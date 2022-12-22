@@ -391,7 +391,7 @@ class ApiRoute extends ApiRouteSpec implements IRouter
 
 		foreach ($parameters as $name => $value) {
 			if (strpos($path, "<{$name}>") !== false && $value !== null) {
-				$path = str_replace("<{$name}>", $value, $path);
+				$path = str_replace("<{$name}>", (string) $value, $path);
 
 				unset($parameters[$name]);
 			}
